@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+     
+	{% if title%}
+	<title> Textile Blog - {{title}}</title>
+	{% else %}
+	<title> Textile Blog  </title>
+	{% endif %}
+</head>
+
+<body>
+  
+	 <header class="site-header" style = "line-height: 2.5">
+      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <div class="container">
+          <a class="navbar-brand mr-4" href="/">Textile blog</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+              <a class="nav-item nav-link" href="/home">Discounts</a>
+            </div>
+            <!-- Navbar Right Side -->
+            <div class="navbar-nav">
+              {% if current_user.is_authenticated %}
+              <a class="nav-item nav-link" href="/post/new">New Post</a>
+              <a class="nav-item nav-link" href="/logout">Logout</a>
+               <a class="nav-item nav-link" href="/account">Account</a>
+               <a class="nav-item nav-link" href="/register">Register</a>
+              {% else %}
+              <a class="nav-item nav-link" href="/login">Login</a>
+               <a class="nav-item nav-link" href="/register">Register</a>
+              
+             {% endif %}
+            </div>
+          </div>
+        </div>
+      </nav>
+   </header>
+
+
+ 
+<!-- background image  -->
+ <img src="{{url_for('static',filename='profile_pics/home.png')}}" width="100%" height="750">
+
+ <div style= "text-align : center; margin-top : 5%; ">
+    <h1 class = "display-4"> Products Category </h1>
+    <div style = "margin-top : 5% ; background-image : url('static/profile_pics/garments.jpg'); width : 35%; height : 400px;
+      margin-left: 14% ;margin-bottom : 10px;float : left">
+         <!-- for writings -->
+         <span style = "text-align: center ; margin : auto">
+         	<br><br><br>
+           <span class="h3" style="color : white;font-style: italic;">
+         	Garments
+         </span>
+         <br><br><br><br><br><br><br><br><br><br><br>
+         <a type="button" class="btn btn-outline-warning" href="/home">Know More</a>
+         </span>
+
+
+    </div>
+
+    <div style = "margin-top : 5% ; background-image : url('static/profile_pics/fabrics2.jpg'); width : 35%; height : 400px;
+      margin-left: 4% ;margin-bottom : 10px; float: left">
+         <!-- for writings -->
+         <span style = "text-align: center ; margin : auto">
+         	<br><br><br>
+           <span class="h3" style="color : white;font-style: italic;">
+         	Fabrics 
+         </span>
+         <br><br><br><br><br><br><br><br><br><br><br>
+         <a type="button" class="btn btn-outline-warning" href="/home">Know More</a>
+         </span>
+    </div>
+</div>
+
+<div style= "text-align : center; margin-top : 5%; ">
+
+    <div style = "margin-top : 5% ; background-image : url('static/profile_pics/organic3.jpg'); width : 35%; height : 400px;
+      margin-left: 14% ;margin-bottom : 20px; float: left">
+         <!-- for writings -->
+         <span style = "text-align: center ; margin : auto">
+         	<br><br><br>
+           <span class="h3" style="color : grey;font-style: italic;">
+         	Organic Products 
+         </span>
+         <br><br><br><br><br><br><br><br><br><br><br>
+         <a type="button" class="btn btn-outline-warning" href="/home">Know More</a>
+         </span>
+    </div>
+
+    <div style = "margin-top : 5% ; background-image : url('static/profile_pics/yarn1.jpg'); width : 35%; height : 400px;
+      margin-left: 4% ;margin-bottom : 20px; float: left">
+         <!-- for writings -->
+         <span style = "text-align: center ; margin : auto">
+         	<br><br><br>
+           <span class="h3" style="color : grey;font-style: italic;">
+         	Yarn 
+         </span>
+         <br><br><br><br><br><br><br><br><br><br><br>
+         <a type="button" class="btn btn-outline-warning" href="/home">Know More</a>
+         </span>
+    </div>
+</div>
+
+
+<div style= "margin-top : 5%; ">
+
+    <div style = "margin-top : 5% ; background-color:grey; width : 100%; height : 250px;
+       float: left">
+
+       <h4 style="font-style: italic; color : white;margin-top : 4%;margin-left:10%; "> Textile Blog</h4>
+
+       <P style="margin-left:12%; color : white ; width : 50%; font-size : medium; font-style: italic "> At  Textiles we are all the time concerned about the way we create satisfication, the way we conduct our business and we try to be not just legally compliant but much more than that. </P>
+     </div>
+</div>
+
+
+</body>
+
+
+
+</html>
+
